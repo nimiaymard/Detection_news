@@ -1,0 +1,31 @@
+# Ignore les fichiers de configuration d'IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore les fichiers Python compilés
+__pycache__/
+*.pyc
+
+# Ignore les environnements virtuels
+venv/
+myenv/
+
+# Ignore les fichiers de log
+*.log
+
+# Ignore les fichiers de données temporaires
+tmp/
+*.csv
+*.dat
+
+# Ignore les fichiers d'artefacts
+*.o
+*.so
+*.a
+*.out
+
+# Ignore les fichiers générés par le système d'exploitation
+.DS_Store
+Thumbs.db
