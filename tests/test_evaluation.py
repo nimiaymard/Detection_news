@@ -10,7 +10,7 @@ class TestEvaluateModel(unittest.TestCase):
         # Chemin vers le fichier de modèle de test
         self.model_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../saved_models/svm_model.pkl'))
         # Chemin vers le fichier de test de données
-        self.test_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/processed/mabs_transformed.csv'))
+        self.test_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/processed/sample_data_transformed_test.csv'))
 
         # Vérifier que les fichiers existent
         self.assertTrue(os.path.exists(self.model_filepath), f"Model file not found: {self.model_filepath}")
