@@ -80,11 +80,13 @@ pytest tests/
 
 ### Méthodologie
 Ce projet suit les étapes classiques de l'apprentissage supervisé :
-1. Collecte des données : Importation des données à partir de diverses sources.
-Prétraitement des données : Nettoyage des données, gestion des valeurs manquantes, et vectorisation des données textuelles.
-2. Modélisation : Entraînement d'un modèle SVM pour la classification des nouvelles.
-3. Évaluation : Utilisation de métriques telles que la précision, le rappel et le score F1 pour évaluer la performance du modèle.
-4. Visualisation : Utilisation de graphiques pour illustrer la performance du modèle.
+Voici un résumé de chaque point en une seule ligne :
+
+- **Préparation des Données :** Collecte, traitement, vectorisation TF-IDF, et mapping des données textuelles en labels numériques.
+- **Modélisation :** Entraînement d'un modèle SVM pour la classification des articles.
+- **Évaluation :** Mesure des performances du modèle avec l'accuracy, le rapport de classification, et la matrice de confusion.
+- **Tests Unitaires :** Validation du code avec des tests unitaires pour le prétraitement, l'entraînement, et la visualisation.
+- **Déploiement :** Containerisation avec Docker et déploiement d'une interface utilisateur Streamlit pour l'accès au modèle en temps réel.
 
 ### Conclusion
 Ce projet montre comment les techniques de machine learning peuvent être utilisées pour résoudre des problèmes complexes comme la détection des fake news. Les résultats obtenus montrent que le modèle SVM est capable de classifier les nouvelles avec un bon niveau de précision.
