@@ -23,14 +23,14 @@ class TestVisualization(unittest.TestCase):
         # Chemin du fichier de sortie
         output_filepath = os.path.join(self.test_dir, 'confusion_matrix.png')
 
-        # Appeler la fonction de traçage de la matrice de confusion
+        # Appel de la fonction de traçage de la matrice de confusion
         plot_confusion_matrix(self.cm, classes=self.labels, output_filepath=output_filepath)
 
-        # Vérifier que le fichier de sortie est créé
+        # Vérification que le fichier de sortie est créé
         self.assertTrue(os.path.exists(output_filepath))
 
     def tearDown(self):
-        # Supprimer les fichiers de test après les tests
+        # Supprission des fichiers de test après les tests
         if os.path.exists(self.test_dir):
             for file in os.listdir(self.test_dir):
                 file_path = os.path.join(self.test_dir, file)
