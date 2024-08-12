@@ -9,7 +9,7 @@ class TestVisualization(unittest.TestCase):
 
     def setUp(self):
         # Créer un répertoire temporaire pour sauvegarder les graphiques
-        self.test_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../reports/figures'))
+        self.test_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../reports/visualization'))
         if not os.path.exists(self.test_dir):
             os.makedirs(self.test_dir)
 
