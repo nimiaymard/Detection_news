@@ -3,7 +3,7 @@ import os
 import joblib
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
-from .train_model import load_data, preprocess_and_vectorize
+from train_model import load_data, preprocess_and_vectorize
 def evaluate_model(model_filepath, input_filepath):
     # Charger les données
 
