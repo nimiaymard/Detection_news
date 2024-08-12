@@ -3,13 +3,14 @@ import os
 import joblib
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
-from train_model import load_data, preprocess_and_vectorize
+from .train_model import load_data, preprocess_and_vectorize
+
 def evaluate_model(model_filepath, input_filepath):
-    # Charger les données
+    # Chargement des données
 
     data = load_data(input_filepath)
     
-    # Prétraiter et vectoriser les données
+    # Prétraitement et vectorisation des données
     X_vectorized, y, vectorizer = preprocess_and_vectorize(data)
     
     # Chargement du modèle et du vectoriseur
