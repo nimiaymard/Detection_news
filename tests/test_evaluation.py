@@ -12,7 +12,7 @@ class TestEvaluateModel(unittest.TestCase):
     def setUp(self):
         # Chemins vers les fichiers de test
         self.model_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../saved_models/svm_model.pkl'))
-        self.test_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/processed/sample_transformed_test.csv'))
+        self.test_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/processed/sample_data_transformed_test.csv'))
 
     def test_evaluate_model(self):
         accuracy, report = evaluate_model(self.model_filepath, self.test_filepath)
