@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.svm import SVC
 from sklearn.feature_extraction.text import TfidfVectorizer
 import os
@@ -21,19 +21,39 @@ def preprocess_and_vectorize(data):
     
     return X_vectorized, y, vectorizer
 
+def perform_grid_search(X_train, y_train):
+    # Définir une grille d'hyperparamètres
+    param_grid = {
+        'C': [0.1, 1, 10],
+        'kernel': ['linear', 'rbf'],
+        'gamma': ['scale', 'auto']
+    }
+    
+    # Créer un modèle SVM
+    svm = SVC()
+
+    # Effectuer la recherche d'hyperparamètres avec GridSearchCV
+    grid_search = GridSearchCV(estimator=svm, param_grid=param_grid, cv=5, n_jobs=-1, verbose=2)
+    grid_search.fit(X_train, y_train)
+
+    # Retourner le meilleur modèle et les meilleurs hyperparamètres
+    return grid_search.best_estimator_, grid_search.best_params_
+
 def train_svm(X, y):
-    # Divisions des données en ensembles d'entraînement et de test
+    # Division des données en ensembles d'entraînement et de test
     test_size = 0.3  # 30% des données seront utilisées pour le test
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
     
-    # Initialisation du SVM avec un noyau 'rbf'
-    svm = SVC(kernel='rbf')
+    # Effectuer la recherche d'hyperparamètres et obtenir le meilleur modèle
+    best_svm, best_params = perform_grid_search(X_train, y_train)
+
+    print(f"Meilleurs hyperparamètres trouvés : {best_params}")
     
-    # Entraînement du SVM avec la méthode fit
-    svm.fit(X_train, y_train)
+    # Entraîner le modèle avec les meilleurs hyperparamètres
+    best_svm.fit(X_train, y_train)
     
     # Retourner le modèle entraîné, le vectoriseur et les ensembles de test pour une future évaluation
-    return svm, vectorizer, X_test, y_test
+    return best_svm, vectorizer, X_test, y_test
 
 def save_model(model, vectorizer, model_filepath):
     # Sauvegarde du modèle entraîné et du vectoriseur
@@ -50,7 +70,7 @@ if __name__ == "__main__":
     # Prétraitement et vectorisation des données
     X_vectorized, y, vectorizer = preprocess_and_vectorize(data)
     
-    # Entraînement du modèle SVM
+    # Entraînement du modèle SVM avec les meilleurs hyperparamètres
     svm, vectorizer, X_test, y_test = train_svm(X_vectorized, y)
 
     # Chemin pour sauvegarder le modèle

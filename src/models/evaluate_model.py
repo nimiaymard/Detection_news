@@ -2,12 +2,11 @@ import pandas as pd
 import os
 import joblib
 from sklearn.metrics import accuracy_score, classification_report
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
 from .train_model import load_data, preprocess_and_vectorize
 
 def evaluate_model(model_filepath, input_filepath):
     # Chargement des données
-
     data = load_data(input_filepath)
     
     # Prétraitement et vectorisation des données
@@ -16,17 +15,20 @@ def evaluate_model(model_filepath, input_filepath):
     # Chargement du modèle et du vectoriseur
     model, _ = joblib.load(model_filepath)
     
-    # Division des données en ensembles d'entraînement et de test
-    test_size = 0.3  # 30% des données seront utilisées pour le test
-    _, X_test, _, y_test = train_test_split(X_vectorized, y, test_size=test_size, random_state=42)
+    # Validation croisée
+    scores = cross_val_score(model, X_vectorized, y, cv=5)
+    print(f"Validation croisée (k=5) scores: {scores}")
+    print(f"Accuracy moyenne: {scores.mean():.3f}")
+    print(f"Écart-type des accuracy: {scores.std():.3f}")
     
-    # Prédictions sur les données de test
-    y_pred = model.predict(X_test)
+    # Prédictions sur l'ensemble complet (sans réentraînement)
+    y_pred = model.predict(X_vectorized)
     
     # Calcul de l'accuracy et génération d'un rapport de classification
-    accuracy = accuracy_score(y_test, y_pred)
-    report = classification_report(y_test, y_pred, target_names=['Fake_news', 'Good_news'])
+    accuracy = accuracy_score(y, y_pred)
+    report = classification_report(y, y_pred, target_names=['Fake_news', 'Good_news'])
     
+    print("\n--- Rapport de classification complet ---")
     print("Accuracy:", accuracy)
     print("Classification Report:\n", report)
 
@@ -38,5 +40,4 @@ if __name__ == "__main__":
     
     # Évaluation de modèle
     evaluate_model(model_filepath, input_filepath)
-
 
