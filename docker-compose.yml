@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    image: python:3.8-slim
+    container_name: streamlit_fake_news
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: streamlit run src/streamlit-app.py
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - model_service  # Si vous avez besoin d'un autre service pour les modèles ou la base de données
+
+  # Un service optionnel si vous avez besoin d'un autre service pour la gestion de modèles
+  model_service:
+    image: some-model-service-image
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./models:/models
+    environment:
+      - MODEL_DIR=/models
