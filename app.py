@@ -36,7 +36,7 @@ def plot_learning_curve(estimator, X, y, ax=None):
     ax.plot(train_sizes, train_scores_mean, 'o-', color="r", label="Score d'entraînement")
     ax.plot(train_sizes, test_scores_mean, 'o-', color="g", label="Score de validation croisée")
     ax.set_title('Courbe d\'apprentissage')
-    ax.set_xlabel('Exemples d\'entraînement')
+    ax.set_xlabel('Entraînement')
     ax.set_ylabel('Score')
     ax.legend(loc='best')
     return ax
