@@ -10,7 +10,7 @@ def prepare_and_transform_data():
     df = pd.DataFrame(data)
 
     # Chemin pour enregistrer les données de test dans data/raw
-    raw_data_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/raw/sample_data_test.csv'))
+    raw_data_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/raw_fake_news/sample_data_test.csv'))
     
     # Créer le répertoire s'il n'existe pas
     raw_data_dir = os.path.dirname(raw_data_filepath)
