@@ -1,7 +1,8 @@
 import os
 import joblib
-from sklearn.metrics import confusion_matrix, classification_report
-from plot_results import plot_class_distribution, plot_confusion_matrix, plot_classification_report
+from .plot_results import plot_class_distribution, plot_confusion_matrix, plot_classification_report
+#from sklearn.metrics import confusion_matrix, classification_report
+#from plot_results import plot_class_distribution, plot_confusion_matrix, plot_classification_report
 import pandas as pd
 
 def load_data(input_filepath):
@@ -37,7 +38,7 @@ def evaluate_and_visualize(input_filepath, model_filepath):
 
 if __name__ == "__main__":
     # Chemin d'entrée
-    input_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../data/processed_fake_news/mabs_transformed.csv'))
+    input_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../data/processed_fake/mabs_transformed.csv'))
     # Chemin du modèle sauvegardé
     model_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../saved_models/svm_model.pkl'))
     
