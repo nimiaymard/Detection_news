@@ -52,10 +52,6 @@ def evaluate_model(model_filepath, input_filepath):
     print("Accuracy:", accuracy)
     print("Classification Report:\n", report)
 
-    # Matrice de confusion
-    cm = confusion_matrix(y, y_pred)
-    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['Fake_news', 'Good_news'])
-    disp.plot()
 
 if __name__ == "__main__":
     # Chemin du fichier modèle
