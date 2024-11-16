@@ -21,9 +21,9 @@ def load_and_transform_data(input_filepath, output_filepath):
 
 if __name__ == "__main__":
     # Chemin d'entrée
-    input_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../data/processed/mabs.csv'))
+    input_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../data/processed_fake_news/mabs.csv'))
     
     # Chemin de sortie
-    output_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../data/processed/mabs_transformed.csv'))
+    output_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../data/processed_fake_news/mabs_transformed.csv'))
     
     load_and_transform_data(input_filepath, output_filepath)
