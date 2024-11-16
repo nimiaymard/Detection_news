@@ -7,8 +7,8 @@ class TestDataProcessing(unittest.TestCase):
 
     def setUp(self):
         # Les fichiers de test existent déjà
-        self.input_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/raw/sample_data_test.csv'))
-        self.output_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/processed/sample_data_transformed_test.csv'))
+        self.input_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/raw_fake_news/sample_data_test.csv'))
+        self.output_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/processed_fake_news/sample_data_transformed_test.csv'))
 
     def test_load_and_transform_data(self):
         # Vérifier que les fichiers de test existent déjà

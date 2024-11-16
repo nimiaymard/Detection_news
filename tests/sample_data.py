@@ -27,7 +27,7 @@ def prepare_and_transform_data():
     df['annotations_num1'] = df['Annotations'].map(annotation_map)
 
     # Chemin pour enregistrer les données transformées dans data/processed
-    transformed_data_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/processed/sample_data_transformed_test.csv'))
+    transformed_data_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/processed_fake_news/sample_data_transformed_test.csv'))
     
     # Créer le répertoire s'il n'existe pas
     transformed_data_dir = os.path.dirname(transformed_data_filepath)
