@@ -38,7 +38,7 @@ def evaluate_and_visualize(input_filepath, model_filepath):
 
 if __name__ == "__main__":
     # Chemin d'entrée
-    input_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../data/processed_fake/mabs_transformed.csv'))
+    input_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../data/processed_fake_news/mabs_transformed.csv'))
     # Chemin du modèle sauvegardé
     model_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../saved_models/svm_model.pkl'))
     
