@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats de l'Analyse</title>
+</head>
+<body>
+    <h1>Résultats de l'Analyse</h1>
+    <h2>Prédictions :</h2>
+    {{ preview|safe }}
+    
+    {% if classification_report %}
+        <h2>Rapport de Classification :</h2>
+        <pre>{{ classification_report }}</pre>
+    {% endif %}
+    
+    <h2>Matrice de Confusion :</h2>
+    <img src="/static/confusion_matrix.png" alt="Matrice de Confusion">
+    
+    <h2>Courbe d'Apprentissage :</h2>
+    <img src="/static/learning_curve.png" alt="Courbe d'Apprentissage">
+
+    <h2>Fichier de résultats :</h2>
+    <a href="{{ results_csv }}">Télécharger les résultats</a>
+</body>
+</html>
