@@ -1,4 +1,4 @@
-# Projet Académique : Détection de Fake News
+# Projet Académique : Détection de Fake News  et Deep Fake (en cours)
 
 Ce projet académique explore l'utilisation de techniques de machine learning pour la détection automatique des fake news. Le projet comprend l'exploration des données, la création de features, l'entraînement de modèles, et la visualisation des résultats. 
 
