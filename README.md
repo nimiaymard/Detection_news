@@ -91,10 +91,10 @@ Ce projet suit les étapes classiques de l'apprentissage supervisé et de la vis
 
 
 ### Conclusion
-Ce projet montre comment les techniques de machine learning peuvent être utilisées pour résoudre des problèmes complexes comme la détection des fake news. Les résultats obtenus montrent que le modèle SVM est capable de classifier les nouvelles avec un bon niveau de précision.
+Ce projet montre comment les techniques de machine learning peuvent être utilisées pour résoudre des problèmes complexes comme la détection des fake news. Les résultats obtenus montrent que le modèle SVM est capable de classifier les nouvelles avec un bon niveau de précision. Toutefois, il reste à implémenter et à évaluer la partie CNN pour la détection des deep fakes, ce qui permettra d'étendre le champ d'application du projet à la désinformation visuelle.
 
 ### Licence
-Ce projet est réalisé dans un cadre académique et est mis à disposition sous la licence MIT. Pour plus de détails, voir le fichier LICENSE.
+Ce projet est réalisé dans un cadre académique et est mis à disposition sous la licence ***. Pour plus de détails, voir le fichier ***.
 
 ### Remerciements
 Merci à Ben pour les conseils et le soutien tout au long de ce projet.
