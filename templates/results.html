@@ -4,24 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Résultats de l'Analyse</title>
+    <!-- Lien vers le fichier CSS pour styliser la page -->
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Résultats de l'Analyse</h1>
-    <h2>Prédictions :</h2>
-    {{ preview|safe }}
+    <header>
+        <h1>Résultats de l'Analyse</h1>
+        <!-- Ajout d'un lien pour retourner à l'accueil -->
+        <a href="/" class="button">Retour à l'accueil</a>
+    </header>
     
-    {% if classification_report %}
-        <h2>Rapport de Classification :</h2>
-        <pre>{{ classification_report }}</pre>
-    {% endif %}
-    
-    <h2>Matrice de Confusion :</h2>
-    <img src="/static/confusion_matrix.png" alt="Matrice de Confusion">
-    
-    <h2>Courbe d'Apprentissage :</h2>
-    <img src="/static/learning_curve.png" alt="Courbe d'Apprentissage">
-
-    <h2>Fichier de résultats :</h2>
-    <a href="{{ results_csv }}">Télécharger les résultats</a>
+    <main>
+        <h2>Prédictions :</h2>
+        <!-- Affichage du tableau des prédictions -->
+        {{ preview|safe }}
+        
+        <!-- Rapport de classification -->
+        {% if classification_report %}
+            <h2>Rapport de Classification :</h2>
+            <pre>{{ classification_report }}</pre>
+        {% endif %}
+        
+        <!-- Matrice de confusion -->
+        <h2>Matrice de Confusion :</h2>
+        <a href="/static/confusion_matrix.png" target="_blank">
+            <img src="/static/confusion_matrix.png" alt="Matrice de Confusion">
+        </a>
+        
+        <!-- Courbe d'apprentissage -->
+        <h2>Courbe d'Apprentissage :</h2>
+        <a href="/static/learning_curve.png" target="_blank">
+            <img src="/static/learning_curve.png" alt="Courbe d'Apprentissage">
+        </a>
+        
+        <!-- Fichier de résultats téléchargeable -->
+        <h2>Fichier de Résultats :</h2>
+        <a href="{{ results_csv }}" class="button">Télécharger les résultats</a>
+    </main>
 </body>
 </html>
