@@ -6,7 +6,7 @@ class TestModels(unittest.TestCase):
     
     def setUp(self):
         # Chemin vers le fichier d'entrée de test
-        self.input_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/processed/sample_data_transformed_test.csv'))
+        self.input_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/processed_fake_news/sample_data_transformed_test.csv'))
         # Chemin vers le fichier de modèle de test
         self.model_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '../saved_models/svm_model_test.pkl'))
 
