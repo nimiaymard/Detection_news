@@ -7,6 +7,9 @@ from sklearn.model_selection import learning_curve
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import matplotlib
+matplotlib.use('Agg')
+
 
 app = Flask(__name__)
 
@@ -100,5 +103,6 @@ def upload():
         results_csv=output_path
     )
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True, use_reloader=False)
+
