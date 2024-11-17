@@ -22,7 +22,7 @@ L'objectif principal de ce projet est de développer un modèle de machine learn
 
 ## Contexte
 
-Dans un contexte où la propagation de la désinformation est un problème croissant, ce projet propose une solution basée sur le machine learning pour identifier les fausses informations dans les médias. Le projet se concentre sur l'application de méthodes d'apprentissage supervisé et sur l'évaluation de leur performance.
+Dans un contexte où la propagation de la désinformation, qu'elle soit textuelle ou visuelle, est un problème croissant, ce projet propose une solution basée sur le machine learning pour identifier les fausses informations dans les médias. Le projet se concentre sur l'application de méthodes d'apprentissage supervisé pour classifier les articles de presse en tant que "Fake News" ou "Good News", ainsi que sur l'utilisation de réseaux de neurones convolutifs (CNN) pour détecter les deep fakes dans les images ou vidéos. L'évaluation de la performance de ces approches constitue également un élément central de ce travail.
 
 ## Installation
 
@@ -79,14 +79,16 @@ pytest tests/
 ```
 
 ### Méthodologie
-Ce projet suit les étapes classiques de l'apprentissage supervisé :
-Voici un résumé de chaque point en une seule ligne :
+Ce projet suit les étapes classiques de l'apprentissage supervisé et de la vision par ordinateur. Voici un résumé de chaque point en une seule ligne :
 
-- **Préparation des Données :** Collecte, traitement, vectorisation TF-IDF, et mapping des données textuelles en labels numériques.
-- **Modélisation :** Entraînement d'un modèle SVM pour la classification des articles.
-- **Évaluation :** Mesure des performances du modèle avec l'accuracy, le rapport de classification, et la matrice de confusion.
-- **Tests Unitaires :** Validation du code avec des tests unitaires pour le prétraitement, l'entraînement, et la visualisation.
-- **Déploiement :** Containerisation avec Docker et déploiement d'une interface utilisateur Streamlit pour l'accès au modèle en temps réel.
+- Préparation des Données (Textes) : Collecte, traitement, vectorisation TF-IDF, et mapping des données textuelles en labels numériques.
+- Modélisation (Textes) : Entraînement d'un modèle SVM pour la classification des articles en "Fake News" ou "Good News".
+- Préparation des Données (Images/Vidéos) : Extraction des cadres des vidéos, normalisation des images, et préparation des labels pour les deep fakes.
+- Modélisation (Images/Vidéos) : Conception et entraînement d'un réseau de neurones convolutifs (CNN) pour détecter les deep fakes en analysant les caractéristiques visuelles.
+- Évaluation : Mesure des performances des modèles (SVM et CNN) avec des métriques adaptées : accuracy, F1-score, rapport de classification, et matrice de confusion.
+- Tests Unitaires : Validation du code avec des tests unitaires pour le prétraitement, l'entraînement des modèles, et la visualisation des résultats.
+- Déploiement : Containerisation avec Docker et déploiement d'une interface utilisateur Streamlit pour permettre l'accès au modèle de classification et à l'analyse des deep fakes en temps réel.
+
 
 ### Conclusion
 Ce projet montre comment les techniques de machine learning peuvent être utilisées pour résoudre des problèmes complexes comme la détection des fake news. Les résultats obtenus montrent que le modèle SVM est capable de classifier les nouvelles avec un bon niveau de précision.
