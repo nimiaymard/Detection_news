@@ -1,10 +1,10 @@
 # Projet Académique : Détection de Fake News  et Deep Fake (en cours)
 
-Ce projet académique explore l'utilisation de techniques de machine learning pour la détection automatique des fake news. Le projet comprend l'exploration des données, la création de features, l'entraînement de modèles, et la visualisation des résultats. 
+Ce projet académique explore l'utilisation de techniques de machine learning pour la détection automatique des fake news et Deep fake. Le projet comprend l'exploration des données, la création de features, l'entraînement de modèles, et la visualisation des résultats. 
 
 ## Objectif du Projet
 
-L'objectif principal de ce projet est de développer un modèle de machine learning capable de classifier des articles de presse en tant que "Fake News" ou "Good News". Ce projet vise à appliquer des méthodes d'apprentissage supervisé, en particulier les Support Vector Machines (SVM), pour aborder ce problème.
+L'objectif principal de ce projet est de développer un modèle de machine learning capable de classifier des articles de presse en tant que "Fake News" ou "Good News". Ce projet vise à appliquer des méthodes d'apprentissage supervisé, en particulier les Support Vector Machines (SVM), pour aborder ce problème. En complément, ce projet intègre également une composante de détection de deep fakes basée sur des réseaux de neurones convolutifs (CNN). Cette partie utilise des techniques avancées de vision par ordinateur pour analyser des images ou des vidéos, afin de distinguer les contenus falsifiés (deep fakes) des originaux, élargissant ainsi l'application du projet au-delà du texte.
 
 ## Structure du Projet
 
